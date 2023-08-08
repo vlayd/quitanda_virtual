@@ -8,6 +8,8 @@ class CustomTextField extends StatefulWidget {
   final List<TextInputFormatter>? inputFormatters;
   final String? initialValue;
   final bool readOnly;
+  final String? Function(String?)? validator;
+  final TextEditingController? controller;
 
   const CustomTextField({
     Key? key,
@@ -17,6 +19,8 @@ class CustomTextField extends StatefulWidget {
     this.inputFormatters,
     this.initialValue,
     this.readOnly = false,
+    this.validator,
+    this.controller,
   }) : super(key: key);
 
   @override
@@ -37,18 +41,21 @@ class _CustomTextFieldState extends State<CustomTextField> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 15),
       child: TextFormField(
+        controller: widget.controller,
         readOnly: widget.readOnly,
         //TODO valor a ser iniciado
         initialValue: widget.initialValue,
         inputFormatters: widget.inputFormatters,
         obscureText: isObscure,
+        validator: widget.validator,
         //TODO bordas circular para TextFormField
         decoration: InputDecoration(
             isDense: true,
             prefixIcon: Icon(widget.icon),
             suffixIcon: widget.isSecret
                 ? IconButton(
-                    icon: Icon(isObscure?Icons.visibility:Icons.visibility_off),
+                    icon: Icon(
+                        isObscure ? Icons.visibility : Icons.visibility_off),
                     onPressed: () {
                       setState(() {
                         isObscure = !isObscure;
