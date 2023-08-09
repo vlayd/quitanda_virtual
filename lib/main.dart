@@ -5,6 +5,8 @@ import 'package:quitanda_virtual/src/pages_routes/app_pages.dart';
 import 'package:quitanda_virtual/src/services/custom_theme.dart';
 
 void main() {
+  //TODO 'certeza que está tudo inicializado'
+  WidgetsFlutterBinding.ensureInitialized();
   //TODO injeções de dependências
   Get.put(AuthController());
   runApp(const MyApp());

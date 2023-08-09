@@ -11,7 +11,7 @@ abstract class HttpMethods {
 class HttpManager {
   Future<Map> restRequest({
     required String url,
-    required String method,
+    String method = HttpMethods.post,
     Map? headers,
     Map? body,
   }) async {
