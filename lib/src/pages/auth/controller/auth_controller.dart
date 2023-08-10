@@ -5,7 +5,7 @@ import 'package:quitanda_virtual/src/models/user_model.dart';
 import 'package:quitanda_virtual/src/pages/auth/repository/auth_repository.dart';
 import 'package:quitanda_virtual/src/pages/auth/result/auth_result.dart';
 import 'package:quitanda_virtual/src/pages_routes/app_pages.dart';
-import 'package:quitanda_virtual/src/services/utils_service.dart';
+import 'package:quitanda_virtual/src/services/utils_services.dart';
 
 class AuthController extends GetxController {
   RxBool isLoading = false.obs;
@@ -71,7 +71,6 @@ class AuthController extends GetxController {
     result.when(success: (user) {
       this.user = user;
       saveTokenAndProceedToBase();
-      print("resposta $user");
     }, error: (message) {
       utilsServices.showToast(
           message: message, isError: true, context: context);

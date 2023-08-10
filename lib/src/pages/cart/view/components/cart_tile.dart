@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quitanda_virtual/src/config/custom_colors.dart';
 import 'package:quitanda_virtual/src/models/cart_item_model.dart';
 import 'package:quitanda_virtual/src/pages/common_widgets/quantity_widget.dart';
-import 'package:quitanda_virtual/src/services/utils_service.dart';
+import 'package:quitanda_virtual/src/services/utils_services.dart';
 
 class CartTile extends StatefulWidget {
   final CartItemModel cartItem;
@@ -54,10 +54,10 @@ class _CartTileState extends State<CartTile> {
         trailing: QuantityWidget(
           value: widget.cartItem.quantity,
           suffixText: widget.cartItem.item.unit,
-          result: (quantity){
+          result: (quantity) {
             setState(() {
               widget.cartItem.quantity = quantity;
-              if(quantity == 0){
+              if (quantity == 0) {
                 //Remover item do carrinho
                 widget.remove(widget.cartItem);
               }

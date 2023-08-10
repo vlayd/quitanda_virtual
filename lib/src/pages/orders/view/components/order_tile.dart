@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quitanda_virtual/src/models/cart_item_model.dart';
 import 'package:quitanda_virtual/src/models/order_model.dart';
 import 'package:quitanda_virtual/src/pages/common_widgets/payment_dialog.dart';
-import 'package:quitanda_virtual/src/services/utils_service.dart';
+import 'package:quitanda_virtual/src/services/utils_services.dart';
 
 import 'order_status_widget.dart';
 
@@ -98,9 +98,12 @@ class OrderTile extends StatelessWidget {
               visible: order.status == "pending_payment",
               child: ElevatedButton.icon(
                 onPressed: () {
-                  showDialog(context: context, builder: (_){
-                    return PaymentDialog(order: order);
-                  },);
+                  showDialog(
+                    context: context,
+                    builder: (_) {
+                      return PaymentDialog(order: order);
+                    },
+                  );
                 },
                 icon: Image.asset(
                   "assets/app_images/pix.png",

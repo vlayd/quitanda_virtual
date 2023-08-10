@@ -7,7 +7,7 @@ import 'package:quitanda_virtual/src/pages/auth/view/components/forgot_password_
 import 'package:quitanda_virtual/src/pages/common_widgets/app_name_widget.dart';
 import 'package:quitanda_virtual/src/pages/common_widgets/custom_text_field.dart';
 import 'package:quitanda_virtual/src/pages_routes/app_pages.dart';
-import 'package:quitanda_virtual/src/services/utils_service.dart';
+import 'package:quitanda_virtual/src/services/utils_services.dart';
 import 'package:quitanda_virtual/src/services/validators.dart';
 
 class SignInScreen extends StatelessWidget {

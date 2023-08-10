@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quitanda_virtual/src/config/custom_colors.dart';
 import 'package:quitanda_virtual/src/models/item_model.dart';
 import 'package:quitanda_virtual/src/pages/common_widgets/quantity_widget.dart';
-import 'package:quitanda_virtual/src/services/utils_service.dart';
+import 'package:quitanda_virtual/src/services/utils_services.dart';
 
 class ProductScreen extends StatefulWidget {
   const ProductScreen({Key? key, required this.item}) : super(key: key);
@@ -39,7 +39,7 @@ class _ProductScreenState extends State<ProductScreen> {
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius:
-                      const BorderRadius.vertical(top: Radius.circular(50)),
+                          const BorderRadius.vertical(top: Radius.circular(50)),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.shade600,
@@ -67,7 +67,7 @@ class _ProductScreenState extends State<ProductScreen> {
                           QuantityWidget(
                             suffixText: widget.item.unit,
                             value: cardItemQuantity,
-                            result: (quantity){
+                            result: (quantity) {
                               setState(() {
                                 cardItemQuantity = quantity;
                               });
